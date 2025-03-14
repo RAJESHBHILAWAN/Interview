@@ -50,6 +50,9 @@ namespace InterviewPrep.LinqQueries.Examples
                 Console.WriteLine($"Department ID : {dept.Id} has Employees {dept.Count}.");
 
             }
+            Console.WriteLine("------------------------------------------");
+            Console.WriteLine("******************************************");
+            Console.WriteLine("------------------------------------------");
 
             var empdepname = from dept in deplst
                          join empGroup in (
