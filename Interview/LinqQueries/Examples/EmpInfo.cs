@@ -41,15 +41,35 @@ namespace InterviewPrep.LinqQueries.Examples
                               into g
                                select new
                                {
-                                   Name = g.Key,
+                                   Id = g.Key,
                                    Count = g.Count()
                                };
 
             foreach (var dept in deptemployee)
             {
-                Console.WriteLine($"Department Name : {dept.Name} has Employees {dept.Count}.");
+                Console.WriteLine($"Department ID : {dept.Id} has Employees {dept.Count}.");
 
             }
+
+            var empdepname = from dept in deplst
+                         join empGroup in (
+                            from e in empllst
+                            group e by e.DepID into g
+                            select g
+                         ) on dept.DepId equals empGroup.Key
+                         select new
+                         {
+                             Name = dept.Name,
+                             Employees = empGroup.ToArray()
+                         };
+
+            foreach (var dept in empdepname)
+            {
+                Console.WriteLine($"Department Name : {dept.Name} has Employees {dept.Employees.Count() }.");
+
+            }
+
+
         }
         private void EmployeeDepartment()
         {
