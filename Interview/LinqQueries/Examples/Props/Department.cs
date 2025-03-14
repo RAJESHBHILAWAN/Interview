@@ -13,6 +13,6 @@ namespace InterviewPrep.LinqQueries.Examples.Props
         public int DepId { get; set; }
 
        
-        public string Name { get; set; }
+        public string DepName { get; set; }
     }
 }

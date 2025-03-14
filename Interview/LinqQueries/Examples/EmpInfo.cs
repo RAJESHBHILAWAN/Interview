@@ -7,15 +7,40 @@ namespace InterviewPrep.LinqQueries.Examples
     {
         public EmpInfo()
         {
-            DepartmentsList();
-            EmployeesList();
-            // SalaryLessThan();
-            // MaxSalary();
+            //DepartmentsList();
+            //EmployeesList();
+            //SalaryLessThan();
+            //MaxSalary();
             //NameStartsWith("P");
-            // ExpInYears();
+            //ExpInYears();
             //EmployeeWithValidEmail();
             //EmployeeDepartment();
-            NumOfEmployeeInEachDept();
+            // NumOfEmployeeInEachDept();
+            LeftJoin();
+        }
+
+        private void LeftJoin()
+        {
+            var empllst = EmployeesList();
+            var deplst = DepartmentsList();
+            //foreach (var emp in empllst)
+            //{
+            //    Console.WriteLine($"Employee Name : {emp.EmpName} has DeptID {emp.DepID}.");
+            //}
+            //foreach (var dept in deplst)
+            //{
+            //    Console.WriteLine($"DepartmentID : {dept.DepId} has Name {dept.DepName}.");
+            //}
+            var q =
+            from emp in empllst
+            join dept in deplst on emp.DepID equals dept.DepId into gr
+            from d in gr.DefaultIfEmpty()
+            select new { Employee = emp.EmpName , DepartmentName = d == null ? "(not yet allocated)" : d.DepName };
+            foreach (var obj in q)
+            {
+                Console.WriteLine($"Employee {obj.Employee}'s department is {obj.DepartmentName}");
+            }
+
         }
 
         private void NumOfEmployeeInEachDept()
@@ -24,11 +49,11 @@ namespace InterviewPrep.LinqQueries.Examples
             var deplst = DepartmentsList();
             foreach (var emp in empllst)
             {
-                Console.WriteLine($"Employee Name : {emp.Name} has DeptID {emp.DepID}.");
+                Console.WriteLine($"Employee Name : {emp.EmpName} has DeptID {emp.DepID}.");
             }
             foreach (var dept in deplst)
             {
-                Console.WriteLine($"DepartmentID : {dept.DepId} has Name {dept.Name}.");
+                Console.WriteLine($"DepartmentID : {dept.DepId} has Name {dept.DepName}.");
             }
             Console.WriteLine("------------------------------------------");
             Console.WriteLine("******************************************");
@@ -55,20 +80,20 @@ namespace InterviewPrep.LinqQueries.Examples
             Console.WriteLine("------------------------------------------");
 
             var empdepname = from dept in deplst
-                         join empGroup in (
-                            from e in empllst
-                            group e by e.DepID into g
-                            select g
-                         ) on dept.DepId equals empGroup.Key
-                         select new
-                         {
-                             Name = dept.Name,
-                             Employees = empGroup.ToArray()
-                         };
+                             join empGroup in (
+                                from e in empllst
+                                group e by e.DepID into g
+                                select g
+                             ) on dept.DepId equals empGroup.Key
+                             select new
+                             {
+                                 Name = dept.DepName,
+                                 Employees = empGroup.ToArray()
+                             };
 
             foreach (var dept in empdepname)
             {
-                Console.WriteLine($"Department Name : {dept.Name} has Employees {dept.Employees.Count() }.");
+                Console.WriteLine($"Department Name : {dept.Name} has Employees {dept.Employees.Count()}.");
 
             }
 
@@ -80,11 +105,11 @@ namespace InterviewPrep.LinqQueries.Examples
             var deplst = DepartmentsList();
             foreach (var emp in empllst)
             {
-                Console.WriteLine($"Employee Name : {emp.Name} has DeptID {emp.DepID}.");
+                Console.WriteLine($"Employee Name : {emp.EmpName} has DeptID {emp.DepID}.");
             }
             foreach (var dept in deplst)
             {
-                Console.WriteLine($"DepartmentID : {dept.DepId} has Name {dept.Name}.");
+                Console.WriteLine($"DepartmentID : {dept.DepId} has Name {dept.DepName}.");
             }
             Console.WriteLine("------------------------------------------");
             Console.WriteLine("******************************************");
@@ -95,8 +120,8 @@ namespace InterviewPrep.LinqQueries.Examples
                               emp.DepID equals dep.DepId
                              select new
                              {
-                                 Name = emp.Name,
-                                 Department = dep.Name
+                                 Name = emp.EmpName,
+                                 Department = dep.DepName
                              };
 
             foreach (var emp in empwithdep)
@@ -113,7 +138,7 @@ namespace InterviewPrep.LinqQueries.Examples
             var empllst = EmployeesList();
             foreach (var emp in empllst)
             {
-                Console.WriteLine($"Employee Name : {emp.Name} has Email as {emp.Email} ");
+                Console.WriteLine($"Employee Name : {emp.EmpName} has Email as {emp.Email} ");
             }
             Console.WriteLine("------------------------------------------");
             Console.WriteLine("******************************************");
@@ -127,7 +152,7 @@ namespace InterviewPrep.LinqQueries.Examples
                                     select emp;
             foreach (var emp in empwithvalidemail)
             {
-                Console.WriteLine($"Employee : {emp.Name} has valid email address as {emp.Email}.");
+                Console.WriteLine($"Employee : {emp.EmpName} has valid email address as {emp.Email}.");
 
             }
 
@@ -140,7 +165,7 @@ namespace InterviewPrep.LinqQueries.Examples
               e => new
               {
                   Id = e.Id,
-                  EmplloyeeName = e.Name,
+                  EmplloyeeName = e.EmpName,
                   EmployeeSalary = e.Salary,
                   Experiance = (System.DateTime.Now.Date - e.DOJ) / 365,
                   DateOfJoin = e.DOJ
@@ -158,17 +183,17 @@ namespace InterviewPrep.LinqQueries.Examples
             var empllst = EmployeesList();
             foreach (var emp in empllst)
             {
-                Console.WriteLine($"Employee Name : {emp.Name} has Salary of {emp.Salary} ");
+                Console.WriteLine($"Employee Name : {emp.EmpName} has Salary of {emp.Salary} ");
             }
             Console.WriteLine("------------------------------------------");
             Console.WriteLine("******************************************");
             Console.WriteLine("------------------------------------------");
             var startswithR = from emp in empllst
-                              where emp.Name.ToLower().StartsWith(strstart.ToLower())
+                              where emp.EmpName.ToLower().StartsWith(strstart.ToLower())
                               select emp;
             foreach (var emp in startswithR)
             {
-                Console.WriteLine($"Employee Name whose name starts with {strstart}  : {emp.Name} ");
+                Console.WriteLine($"Employee Name whose name starts with {strstart}  : {emp.EmpName} ");
             }
 
         }
@@ -177,7 +202,7 @@ namespace InterviewPrep.LinqQueries.Examples
             var empllst = EmployeesList();
             foreach (var emp in empllst)
             {
-                Console.WriteLine($"Employee Name : {emp.Name} has Salary of {emp.Salary} ");
+                Console.WriteLine($"Employee Name : {emp.EmpName} has Salary of {emp.Salary} ");
             }
             Console.WriteLine("------------------------------------------");
             Console.WriteLine("******************************************");
@@ -188,7 +213,7 @@ namespace InterviewPrep.LinqQueries.Examples
                                       select emp;
             foreach (var emp in highestpaidemployee)
             {
-                Console.WriteLine($"Employee Name : {emp.Name} has max salary with salary of {emp.Salary}");
+                Console.WriteLine($"Employee Name : {emp.EmpName} has max salary with salary of {emp.Salary}");
             }
 
 
@@ -202,7 +227,7 @@ namespace InterviewPrep.LinqQueries.Examples
             var empllst = EmployeesList();
             foreach (var emp in empllst)
             {
-                Console.WriteLine($"Employee Name : {emp.Name} has Salary of {emp.Salary} ");
+                Console.WriteLine($"Employee Name : {emp.EmpName} has Salary of {emp.Salary} ");
             }
             Console.WriteLine("------------------------------------------");
             Console.WriteLine("******************************************");
@@ -214,71 +239,81 @@ namespace InterviewPrep.LinqQueries.Examples
 
             foreach (var emp in empl)
             {
-                Console.WriteLine($"Employee Name : {emp.Name} has Salary of {emp.Salary} is less than {minsal}");
+                Console.WriteLine($"Employee Name : {emp.EmpName} has Salary of {emp.Salary} is less than {minsal}");
             }
         }
 
         public List<Department> DepartmentsList()
         {
             List<Department> departments = new List<Department>();
-            departments.Add(new Department { Name = "Physics", DepId = 10 });
-            departments.Add(new Department { Name = "Biology", DepId = 20 });
-            departments.Add(new Department { Name = "Chemistry", DepId = 30 });
+            departments.Add(new Department { DepName = "Physics", DepId = 10 });
+            departments.Add(new Department { DepName = "Biology", DepId = 20 });
+            departments.Add(new Department { DepName = "Chemistry", DepId = 30 });
             return departments;
         }
         public List<Employee> EmployeesList()
         {
             List<Employee> employees = new List<Employee>();
+            int empid = 0;
             employees.Add(new Employee
             {
                 DepID = 10,
-                Name = "Abhi Singh",
+                EmpName = "Abhi Singh",
                 DOJ = new DateTime(2022, 4, 12),
-                Id = 1,
+                Id = ++empid,
                 Salary = 2500,
                 Email = "a@com"
             });
             employees.Add(new Employee
             {
                 DepID = 20,
-                Name = "Priyanka Gupta",
+                EmpName = "Priyanka Gupta",
                 DOJ = new DateTime(2023, 5, 13),
-                Id = 2,
+                Id = ++empid,
                 Salary = 5500
             });
             employees.Add(new Employee
             {
                 DepID = 20,
-                Name = "Piyush Srivastava",
+                EmpName = "Piyush Srivastava",
                 DOJ = new DateTime(2020, 6, 15),
-                Id = 3,
+                Id = ++empid,
                 Salary = 7500,
                 Email = "a@a.com"
             });
             employees.Add(new Employee
             {
                 DepID = 30,
-                Name = "Ankit Verma",
+                EmpName = "Ankit Verma",
                 DOJ = new DateTime(2022, 8, 1),
-                Id = 4,
+                Id = ++empid,
                 Salary = 8000,
                 Email = "prafull@gmail.net"
             });
             employees.Add(new Employee
             {
                 DepID = 20,
-                Name = "Pratyush Sharma",
+                EmpName = "Pratyush Sharma",
                 DOJ = new DateTime(2021, 2, 23),
-                Id = 5,
+                Id = ++empid,
                 Salary = 3000,
                 Email = "anukrishnaom@gmail.com"
             });
             employees.Add(new Employee
             {
                 DepID = 10,
-                Name = "Kiran Rao",
+                EmpName = "Kiran Rao",
                 DOJ = new DateTime(2019, 8, 28),
-                Id = 6,
+                Id = ++empid,
+                Salary = 5700,
+                Email = "xyz"
+            });
+            employees.Add(new Employee
+            {
+
+                EmpName = "Dept Singh",
+                DOJ = new DateTime(2019, 8, 28),
+                Id = ++empid,
                 Salary = 5700,
                 Email = "xyz"
             });
