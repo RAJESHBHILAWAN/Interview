@@ -10,7 +10,7 @@ Console.WriteLine("Hello, World!");
 //InterviewPrep.DesignPatterns.AbstractFactory abstractFactory =
 //     new InterviewPrep.DesignPatterns.AbstractFactory();
 
-//SingletonInstance singletonInstance = new SingletonInstance();
+ //SingletonInstance singletonInstance = new SingletonInstance();
 
 
 
@@ -24,4 +24,4 @@ Console.WriteLine("Hello, World!");
 
 //AsyncAwait await1 = new AsyncAwait();
 //ThirdHighest interview = new ThirdHighest();
-EmpInfo empDep = new EmpInfo();
+ EmpInfo empDep = new EmpInfo();

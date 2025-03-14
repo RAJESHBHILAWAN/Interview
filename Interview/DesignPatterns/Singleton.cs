@@ -35,7 +35,7 @@ namespace InterviewPrep.DesignPatterns
     public class Singleton
     {
         private static int instanceCounter = 0;
-        private static Singleton instance;
+        private static Singleton? instance  ;
         
         private static readonly object instanceLock = new object();
         private Singleton() {

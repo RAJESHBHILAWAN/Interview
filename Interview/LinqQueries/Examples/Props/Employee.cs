@@ -11,12 +11,12 @@ namespace InterviewPrep.LinqQueries.Examples.Props
         public int Id { get; set; }
 
         public int DepID { get; set; }
-        public string EmpName { get; set; }
+        public string? EmpName { get; set; }
         public decimal Salary { get; set; }
 
         public DateTime DOJ { get; set; }
 
-        public String Email { get; set; }
+        public String? Email { get; set; }
 
 
     }
