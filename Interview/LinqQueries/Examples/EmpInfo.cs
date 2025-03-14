@@ -44,6 +44,7 @@ namespace InterviewPrep.LinqQueries.Examples
                                    Name = g.Key,
                                    Count = g.Count()
                                };
+
             foreach (var dept in deptemployee)
             {
                 Console.WriteLine($"Department Name : {dept.Name} has Employees {dept.Count}.");
