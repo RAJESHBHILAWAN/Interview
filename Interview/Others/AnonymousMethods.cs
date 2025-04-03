@@ -30,7 +30,7 @@ namespace InterviewPrep.Others
     
     private void AnonFunc()
         { 
-            Func<int,int> func = x=> x *x ;
+            Func<int,int> func = x => x * x ;
             Console.WriteLine(func(2));
         }
     private void AnonAction() {

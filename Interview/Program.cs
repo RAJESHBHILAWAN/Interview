@@ -20,8 +20,8 @@ Console.WriteLine("Hello, World!");
 //LamdaExpr lamdaExpr = new LamdaExpr();
 //AnonymousMethods anonymousMethods = new AnonymousMethods();
 
-//clsEquals clsEquals = new clsEquals();
+ clsEquals clsEquals = new clsEquals();
 
 //AsyncAwait await1 = new AsyncAwait();
 //ThirdHighest interview = new ThirdHighest();
- EmpInfo empDep = new EmpInfo();
+// EmpInfo empDep = new EmpInfo();

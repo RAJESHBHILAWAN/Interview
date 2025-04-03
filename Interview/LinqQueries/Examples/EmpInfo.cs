@@ -33,7 +33,8 @@ namespace InterviewPrep.LinqQueries.Examples
             //}
             var q =
             from emp in empllst
-            join dept in deplst on emp.DepID equals dept.DepId into gr
+            join dept in deplst on emp.DepID equals 
+            dept.DepId into gr
             from d in gr.DefaultIfEmpty()
             select new { Employee = emp.EmpName , DepartmentName = d == null ? "(not yet allocated)" : d.DepName };
             foreach (var obj in q)
@@ -91,9 +92,9 @@ namespace InterviewPrep.LinqQueries.Examples
                                  Employees = empGroup.ToArray()
                              };
 
-            foreach (var dept in empdepname)
+            foreach (var x in empdepname)
             {
-                Console.WriteLine($"Department Name : {dept.Name} has Employees {dept.Employees.Count()}.");
+                Console.WriteLine($"Department Name : {x.Name} has Employees {x.Employees.Count()}.");
 
             }
 
