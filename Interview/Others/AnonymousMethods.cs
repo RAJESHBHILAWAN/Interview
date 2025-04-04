@@ -8,36 +8,38 @@ namespace InterviewPrep.Others
 {
     public class AnonymousMethods
     {
-   
-    
-   public AnonymousMethods() {
+
+
+        public AnonymousMethods()
+        {
             //MyAnon();
             //AnonFunc();
             //AnonAction();
             //AnonSelect();
-            Findingmissing();
+         
         }
 
-   delegate void CalculateResult(int x);
-    
-    private void MyAnon()
+        delegate void CalculateResult(int x);
+
+        private void MyAnon()
         {
             int x = 0;
             CalculateResult calculateResult = delegate (int x) { Console.WriteLine(x); };
-            x=1; 
+            x = 1;
             calculateResult(x);
-        
+
         }
-    
-    private void AnonFunc()
-        { 
-            Func<int,int> func = x => x * x ;
+
+        private void AnonFunc()
+        {
+            Func<int, int> func = x => x * x;
             Console.WriteLine(func(2));
         }
-    private void AnonAction() {
-            Action<int> action = x => { Console.WriteLine(x*x); };
+        private void AnonAction()
+        {
+            Action<int> action = x => { Console.WriteLine(x * x); };
             action(4);
-        
+
         }
         private void AnonSelect()
         {
@@ -46,33 +48,7 @@ namespace InterviewPrep.Others
             Console.WriteLine(string.Join(" , ", squarednumbers));
         }
 
-        private void Findingmissing()
-        {
-            List<int> x = [ 6, 2, 4, 1, 9, 7, 3, 10, 15, 19, 11, 18, 13, 22, 24, 20, 27, 31, 25, 28 ];
-            foreach(int xx in x.FindMissing())
-            {  Console.WriteLine(xx); }
-        }
        
-
     }
-
-    public static class clsFindMissing
-    {
-        public static IEnumerable<int> FindMissing(this List<int> list)
-        {
-            // Sorting the list
-            list.Sort();
-            // First number of the list
-            var firstNumber = list.First();
-            // Last number of the list
-            var lastNumber = list.Last();
-            // Range that contains all numbers in the  interval
-            // [ firstNumber, lastNumber ]
-            var range = Enumerable.Range(firstNumber, lastNumber - firstNumber);
-            // Getting the set difference
-            var missingNumbers = range.Except(list);
-            return missingNumbers;
-        }
-    }
-
+      
 }
