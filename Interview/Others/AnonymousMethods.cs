@@ -11,10 +11,11 @@ namespace InterviewPrep.Others
    
     
    public AnonymousMethods() {
-            MyAnon();
-            AnonFunc();
-            AnonAction();
-            AnonSelect();
+            //MyAnon();
+            //AnonFunc();
+            //AnonAction();
+            //AnonSelect();
+            Findingmissing();
         }
 
    delegate void CalculateResult(int x);
@@ -44,5 +45,35 @@ namespace InterviewPrep.Others
             var squarednumbers = ints.Select(x => x * x);
             Console.WriteLine(string.Join(" , ", squarednumbers));
         }
+
+        private void Findingmissing()
+        {
+            List<int> x = [ 6, 2, 4, 1, 9, 7, 3, 10, 15, 19, 11, 18, 13, 22, 24, 20, 27, 31, 25, 28 ];
+            IEnumerable<int> y = x.FindMissing();
+            foreach(int xx in y)
+            {  Console.WriteLine(xx); }
+        }
+       
+
     }
+
+    public static class clsFindMissing
+    {
+        public static IEnumerable<int> FindMissing(this List<int> list)
+        {
+            // Sorting the list
+            list.Sort();
+            // First number of the list
+            var firstNumber = list.First();
+            // Last number of the list
+            var lastNumber = list.Last();
+            // Range that contains all numbers in the  interval
+            // [ firstNumber, lastNumber ]
+            var range = Enumerable.Range(firstNumber, lastNumber - firstNumber);
+            // Getting the set difference
+            var missingNumbers = range.Except(list);
+            return missingNumbers;
+        }
+    }
+
 }

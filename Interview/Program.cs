@@ -18,9 +18,9 @@ Console.WriteLine("Hello, World!");
 //DelegateMethods delegateMethods = new DelegateMethods();
 //InterviewPrep.Others.YeildMethods yeildMethods = new YeildMethods();
 //LamdaExpr lamdaExpr = new LamdaExpr();
-//AnonymousMethods anonymousMethods = new AnonymousMethods();
+AnonymousMethods anonymousMethods = new AnonymousMethods();
 
- clsEquals clsEquals = new clsEquals();
+// clsEquals clsEquals = new clsEquals();
 
 //AsyncAwait await1 = new AsyncAwait();
 //ThirdHighest interview = new ThirdHighest();
