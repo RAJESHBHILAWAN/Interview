@@ -13,7 +13,7 @@ namespace Interview.Others
     internal class ManipulatingClasses
     {
         public ManipulatingClasses() {
-            //GetClassEmements();
+            //GetPrivateClassInstance();
             //CreateGeneric();
             OverloadedIndexer();
         }
@@ -41,7 +41,7 @@ namespace Interview.Others
         }
 
 
-        private void GetClassEmements()
+        private void GetPrivateClassInstance()
         {
             Type type = typeof(Foo);
             Foo? foo = (Foo?)Activator.CreateInstance(type, true);
