@@ -26,4 +26,5 @@ Console.WriteLine("Hello, World!");
 //AsyncAwait await1 = new AsyncAwait();
 //ThirdHighest interview = new ThirdHighest();
 // EmpInfo empDep = new EmpInfo();
-DictionaryvsHashTable dictionaryvsHashTable = new DictionaryvsHashTable();
+///DictionaryvsHashTable dictionaryvsHashTable = new DictionaryvsHashTable();
+ManipulatingClasses  manipulatingClasses = new ManipulatingClasses();
