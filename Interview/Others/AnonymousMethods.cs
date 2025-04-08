@@ -39,6 +39,8 @@ namespace InterviewPrep.Others
         {
             Action<int> action = x => { Console.WriteLine(x * x); };
             action(4);
+            Action<int, int> action1 = (x, y) => { Console.WriteLine(x * y); };
+            action1(2, 3);
 
         }
         private void AnonSelect()

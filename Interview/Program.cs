@@ -27,4 +27,5 @@ Console.WriteLine("Hello, World!");
 //ThirdHighest interview = new ThirdHighest();
 // EmpInfo empDep = new EmpInfo();
 ///DictionaryvsHashTable dictionaryvsHashTable = new DictionaryvsHashTable();
-ManipulatingClasses  manipulatingClasses = new ManipulatingClasses();
+//ManipulatingClasses  manipulatingClasses = new ManipulatingClasses();
+StructOne structOne = new StructOne();
