@@ -59,13 +59,13 @@ namespace Interview.Others
             tbl.Add(4, "pine");
             tbl.Add(5, "pineapple");
             tbl.Add(6, "guava");
-            //foreach (object i in tbl.Keys)
-            //    Console.WriteLine(i);
-            //foreach (object J in tbl.Values)
-            //    Console.WriteLine(J);
-            //foreach (DictionaryEntry di in tbl)
-            //    Console.WriteLine("keys={0} values={1}", di.Key, di.Value);
-            //Console.ReadKey();
+            foreach (object i in tbl.Keys)
+                Console.WriteLine(i);
+            foreach (object J in tbl.Values)
+                Console.WriteLine(J);
+            foreach (DictionaryEntry di in tbl)
+                Console.WriteLine("keys={0} values={1}", di.Key, di.Value);
+            Console.ReadKey();
             string key = "guava";
             if (tbl.ContainsValue(key))
             {
