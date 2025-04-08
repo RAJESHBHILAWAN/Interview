@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using Interview.Others;
 using InterviewPrep.DesignPatterns;
 using InterviewPrep.LinqQueries;
 using InterviewPrep.LinqQueries.Examples;
@@ -18,10 +19,11 @@ Console.WriteLine("Hello, World!");
 //DelegateMethods delegateMethods = new DelegateMethods();
 //InterviewPrep.Others.YeildMethods yeildMethods = new YeildMethods();
 //LamdaExpr lamdaExpr = new LamdaExpr();
-AnonymousMethods anonymousMethods = new AnonymousMethods();
+//AnonymousMethods anonymousMethods = new AnonymousMethods();
 
 // clsEquals clsEquals = new clsEquals();
 
 //AsyncAwait await1 = new AsyncAwait();
 //ThirdHighest interview = new ThirdHighest();
 // EmpInfo empDep = new EmpInfo();
+DictionaryvsHashTable dictionaryvsHashTable = new DictionaryvsHashTable();
