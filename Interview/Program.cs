@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Interview.Others;
+using Interview.SOLID;
 using InterviewPrep.DesignPatterns;
 using InterviewPrep.LinqQueries;
 using InterviewPrep.LinqQueries.Examples;
@@ -28,4 +29,5 @@ Console.WriteLine("Hello, World!");
 // EmpInfo empDep = new EmpInfo();
 ///DictionaryvsHashTable dictionaryvsHashTable = new DictionaryvsHashTable();
 //ManipulatingClasses  manipulatingClasses = new ManipulatingClasses();
-StructOne structOne = new StructOne();
+//StructOne structOne = new StructOne();
+solidPrinciples solidPrinciples = new solidPrinciples();
