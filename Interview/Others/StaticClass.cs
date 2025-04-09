@@ -8,10 +8,14 @@ namespace Interview.Others
 {
     static class StaticClass
     {
-         static StaticClass()
+        static StaticClass()
         {
 
         }
+        //static StaticClass(int x)
+        //{
+
+        //}
 
         private static void ToDo()
         {
