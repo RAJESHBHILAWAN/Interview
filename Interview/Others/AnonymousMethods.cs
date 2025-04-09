@@ -12,16 +12,16 @@ namespace InterviewPrep.Others
 
         public AnonymousMethods()
         {
-            //MyAnon();
+            //AnonymousMethod();
             //AnonFunc();
             //AnonAction();
             //AnonSelect();
-         
+
         }
 
         delegate void CalculateResult(int x);
 
-        private void MyAnon()
+        private void AnonymousMethod()
         {
             int x = 0;
             CalculateResult calculateResult = delegate (int x) { Console.WriteLine(x); };
