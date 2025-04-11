@@ -94,6 +94,7 @@ namespace Interview.Others
                 {
                     if (name[index] == nm)
                     {
+                        index++;
                         return index;
                     }
                     index++;
