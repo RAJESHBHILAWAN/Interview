@@ -130,7 +130,7 @@ namespace Interview.SOLID
         {
             List<IBuying> list = new List<IBuying>();
             list.Add(new Customer());
-            //list.Add(new Enquiry());
+            //list.Add(new Enquiry()); 
             List<IDiscount> reads = new List<IDiscount>();
             reads.Add(new Customer());
             reads.Add(new Enquiry());
