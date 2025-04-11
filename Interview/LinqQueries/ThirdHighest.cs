@@ -15,15 +15,10 @@ namespace InterviewPrep.LinqQueries
         private void ThirdHighestNumber()
         {
             int[] arrayint = { 1, 2, 3, 4, 6,6,7,7,7, 8 };
-            //int thirdhighestvalu = arrayint.Where( 
-            //    i => i != ( 
-            //    arrayint.Where(i=> i !=(
-            //    arrayint.Where(i=>i != 
-            //    arrayint.Max()).First())).First())).First();
-           // Console.WriteLine(thirdhighestvalu);
-          // Console.WriteLine(arrayint.OrderByDescending(x => x).Take(3).Last());
+            //var res = from x in arrayint group x by x into grpx orderby grpx.Key descending select grpx;
+            //Console.WriteLine(res.ElementAt(2).FirstOrDefault());
 
-           Console.WriteLine (arrayint.GroupBy(s=>s)
+            Console.WriteLine (arrayint.GroupBy(s=>s)
                .OrderByDescending(x=>x.Key).ElementAt(2).FirstOrDefault());
             
 

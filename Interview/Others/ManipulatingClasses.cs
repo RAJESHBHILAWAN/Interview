@@ -31,10 +31,10 @@ namespace Interview.Others
         }
         private void CreateGeneric()
         {
-            Student<int> student = new Student<int>();
+            GenericStudent<int> student = new GenericStudent<int>();
             student.Value = 1;
             student.WriteData();
-            Student<string> strstudent = new Student<string>();
+            GenericStudent<string> strstudent = new GenericStudent<string>();
             strstudent.Value = "R001";
             strstudent.WriteData();
 
@@ -63,7 +63,7 @@ namespace Interview.Others
         }
     }
 
-    public class Student<T>
+    public class GenericStudent<T>
     {
         public T Value { get; set; }
 

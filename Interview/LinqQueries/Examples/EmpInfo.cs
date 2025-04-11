@@ -174,7 +174,7 @@ namespace InterviewPrep.LinqQueries.Examples
               );
             foreach (var emp in empexperiance)
             {
-                Console.WriteLine($"Employee : {emp.EmplloyeeName} has DOJ as {emp.DateOfJoin} has {emp.Experiance} years experiance.");
+                Console.WriteLine($"Employee : {emp.EmplloyeeName} has DOJ as {emp.DateOfJoin} has {String.Format("{0:##}", emp.Experiance)} years experiance.");
             }
 
         }
