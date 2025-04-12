@@ -30,4 +30,5 @@ Console.WriteLine("Hello, World!");
 ///DictionaryvsHashTable dictionaryvsHashTable = new DictionaryvsHashTable();
 //ManipulatingClasses  manipulatingClasses = new ManipulatingClasses();
 //StructOne structOne = new StructOne();
-solidPrinciples solidPrinciples = new solidPrinciples();
+//solidPrinciples solidPrinciples = new solidPrinciples();
+JaggedArrays jaggedArrays = new JaggedArrays();
