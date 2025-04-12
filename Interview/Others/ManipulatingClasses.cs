@@ -17,6 +17,15 @@ namespace Interview.Others
             //CreateGeneric();
             OverloadedIndexer();
         }
+        private void ExtensionMethod()
+        {
+            string s = "Dot Net Tricks Extension Method Example" ;
+ 
+            //calling extension method
+            int i = s.WordCount();
+            Console.WriteLine(i);
+
+        }
         private void OverloadedIndexer()
         {
             OverloadedIndexers o  = new OverloadedIndexers();
@@ -107,5 +116,12 @@ namespace Interview.Others
     }
 
 
+    public static class MyExtensions
+    {
+        public static int WordCount(this String str)
+        {
+            return str.Split(new char[] { ' ' , '.' , ',' }).Length;
+        }
+    }
 
 }
