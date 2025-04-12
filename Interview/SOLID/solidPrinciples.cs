@@ -200,7 +200,8 @@ namespace Interview.SOLID
     class EmailLogger : ILogger
     {
         public void Handle(string error)
-        { // send errors in email
+        { 
+            // send errors in email
         }
     }
     class CustomerLogger  
