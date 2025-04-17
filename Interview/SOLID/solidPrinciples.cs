@@ -94,6 +94,7 @@ namespace Interview.SOLID
     #endregion
 
     #region "L for SOLID"
+    // Lishkov Substitution Principle 
 
     public interface IDiscount
     {
