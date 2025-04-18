@@ -17,7 +17,8 @@ namespace InterviewPrep.Others
             //AnonAction();
             //AnonSelect();
             //MyPredicate1();
-            MyEvent();
+            //MyEvent();
+            MyClosure();
         }
 
         delegate void CalculateResult(int x);
@@ -49,6 +50,14 @@ namespace InterviewPrep.Others
             int[] ints = { 1, 2, 3 };
             var squarednumbers = ints.Select(x => x * x);
             Console.WriteLine(string.Join(" , ", squarednumbers));
+        }
+        delegate void Action();
+        private void MyClosure()
+        {
+            int x = 0;
+            Action a = delegate { Console.WriteLine(x); };
+            x = 1;
+            a();
         }
         static bool IsUpperCase(string str)
         {
