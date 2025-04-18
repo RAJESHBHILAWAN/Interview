@@ -20,7 +20,7 @@ Console.WriteLine("Hello, World!");
 //DelegateMethods delegateMethods = new DelegateMethods();
 //InterviewPrep.Others.YeildMethods yeildMethods = new YeildMethods();
 //LamdaExpr lamdaExpr = new LamdaExpr();
-//AnonymousMethods anonymousMethods = new AnonymousMethods();
+ AnonymousMethods anonymousMethods = new AnonymousMethods();
 
 // clsEquals clsEquals = new clsEquals();
 
@@ -31,4 +31,4 @@ Console.WriteLine("Hello, World!");
 //ManipulatingClasses  manipulatingClasses = new ManipulatingClasses();
 //StructOne structOne = new StructOne();
 //solidPrinciples solidPrinciples = new solidPrinciples();
-JaggedArrays jaggedArrays = new JaggedArrays();
+//JaggedArrays jaggedArrays = new JaggedArrays();
