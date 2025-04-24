@@ -6,7 +6,7 @@ using InterviewPrep.LinqQueries;
 using InterviewPrep.LinqQueries.Examples;
 using InterviewPrep.Others;
 
-Console.WriteLine("Hello, World!");
+//Console.WriteLine("Hello, World!");
 
 //InterviewPrep.DesignPatterns.FactoryPattern bank = new InterviewPrep.DesignPatterns.FactoryPattern();
 //InterviewPrep.DesignPatterns.AbstractFactory abstractFactory =
@@ -20,7 +20,7 @@ Console.WriteLine("Hello, World!");
 //DelegateMethods delegateMethods = new DelegateMethods();
 //InterviewPrep.Others.YeildMethods yeildMethods = new YeildMethods();
 //LamdaExpr lamdaExpr = new LamdaExpr();
- AnonymousMethods anonymousMethods = new AnonymousMethods();
+// AnonymousMethods anonymousMethods = new AnonymousMethods();
 
 // clsEquals clsEquals = new clsEquals();
 
@@ -32,3 +32,4 @@ Console.WriteLine("Hello, World!");
 //StructOne structOne = new StructOne();
 //solidPrinciples solidPrinciples = new solidPrinciples();
 //JaggedArrays jaggedArrays = new JaggedArrays();
+AspecctOrientedProgramming aspecctOrientedProgramming = new AspecctOrientedProgramming();
