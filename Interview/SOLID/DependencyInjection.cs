@@ -21,7 +21,7 @@ namespace Interview.SOLID
         {
 
             ClientPropertyInjection client = new ClientPropertyInjection();
-            client.Service = new Service();
+            client.Service = new MailService();
             client.Start();
             Console.ReadKey();
 
@@ -102,4 +102,11 @@ public class Service : IService
     }
 }
 
-
+public class MailService : IService
+{
+    public void Serve()
+    {
+        Console.WriteLine("Service Called");
+        //To Do: Some Stuff
+    }
+}
