@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Interview.EntityFrameword
+namespace Interview.EntityFramework
 {
     internal class EntityDB : DbContext
     {
