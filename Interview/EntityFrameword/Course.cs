@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Interview.EntityFrameword
 {
-    internal class Course
+    public class Course
     {
+
+        public int CourseId { get; set; }
+        public string CourseName { get; set; }
+        public ICollection<Student>? Students { get; set; }
+
     }
 }
