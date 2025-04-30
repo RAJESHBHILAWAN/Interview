@@ -30,6 +30,10 @@ namespace Interview.Others
                 {
                     Console.WriteLine(key);
                 }
+                foreach (string valu in tbl.Values)
+                {
+                    Console.WriteLine(valu);
+                }
                 int key1 = 5;
                 var theValue = "";
                 if (tbl.ContainsKey(key1))
