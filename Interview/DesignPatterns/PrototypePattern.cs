@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Interview.NotImp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,7 +12,15 @@ namespace Interview.DesignPatterns
     {
         // This is a creational design pattern that allows you to
         // create new objects by copying existing objects
-      
+
+        //a copy constructor is a language feature that allows creating a new object
+        //by copying an existing one of the same class. The prototype pattern, on
+        //the other hand, is a design pattern that provides a mechanism to create
+        //new objects by cloning existing ones.While both achieve object cloning,
+        //the prototype pattern offers more flexibility and can be used with different
+        //types of objects, including those with complex internal structures, while a
+        //copy constructor is limited to objects of the same class. 
+
         public PrototypePattern()
         {
             List<string> Options = new List<string>() { "Navigation", "Sunroof" };
