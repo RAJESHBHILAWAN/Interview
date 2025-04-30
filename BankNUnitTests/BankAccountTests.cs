@@ -3,6 +3,7 @@ using System.Security.Principal;
 
 namespace BankNUnitTests
 {
+    [TestFixture]
     public class BankAccountTests
     {
         private BankAccount account;
@@ -42,7 +43,7 @@ namespace BankNUnitTests
         {
              
             // ACT + ASSERT
-            Assert.Throws<ArgumentOutOfRangeException>(() => account.Withdraw(2000000000000000000));
+            Assert.Throws<ArgumentOutOfRangeException>(() => account.Withdraw(2000000000000000000.34333));
         }
         [Test]
         public void Withdrawing_Funds_Updates_Balance()
@@ -52,6 +53,7 @@ namespace BankNUnitTests
 
             // ASSERT
             Assert.AreEqual(500, account.Balance);
+      
         }
 
         [Test]
