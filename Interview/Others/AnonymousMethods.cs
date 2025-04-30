@@ -31,7 +31,13 @@ namespace InterviewPrep.Others
             calculateResult(x);
 
         }
-
+        private void MyClosure()
+        {
+            int x = 0;
+            Action a = delegate { Console.WriteLine(x); };
+            x = 1;
+            a();
+        }
         private void AnonFunc()
         {
             Func<int, int> func = x => x * x;
@@ -52,13 +58,7 @@ namespace InterviewPrep.Others
             Console.WriteLine(string.Join(" , ", squarednumbers));
         }
         delegate void Action();
-        private void MyClosure()
-        {
-            int x = 0;
-            Action a = delegate { Console.WriteLine(x); };
-            x = 1;
-            a();
-        }
+       
         static bool IsUpperCase(string str)
         {
             return str.Equals(str.ToUpper());
