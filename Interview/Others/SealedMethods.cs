@@ -11,7 +11,7 @@ namespace Interview.Others
         public SealedMethods() { }
     }
 
-   public class BaseClass
+    public class BaseClass
     {
         public virtual void MyMethod()
         {
@@ -27,8 +27,8 @@ namespace Interview.Others
         }
     }
 
- public class AnotherDerivedClass : DerivedClass
-{
+    public class AnotherDerivedClass : DerivedClass
+    {
         // This will cause a compile-time error because MyMethod is sealed in DerivedClass
         //public override void MyMethod()
         //{
