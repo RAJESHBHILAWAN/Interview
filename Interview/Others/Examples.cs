@@ -13,9 +13,25 @@ namespace Interview.Others
             //Findingmissing();
             //HowManyTimesNumberOccur();
             //HowManyTimesNumberOccurDictionary();
-            Testforcharacters();
+            //Testforcharacters();
+            mydel();
         }
+        delegate void Printer();
 
+        private void mydel()
+        {
+            List<Printer> printers = new List<Printer>();
+            int i = 0;
+            for (; i < 10; i++)
+            {
+                printers.Add( delegate { Console.WriteLine(i); });
+            }
+            foreach (var printer in printers)
+            {
+                printer();
+            }
+
+        }
         private void Findingmissing()
         {
             List<int> x = new List<int>() { 6, 2, 4, 1, 9, 7, 3, 10, 15, 19, 11, 18, 13, 22, 24, 20, 27, 31, 25, 28 };

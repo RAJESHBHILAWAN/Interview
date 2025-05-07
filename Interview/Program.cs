@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Interview.NotImp;
+using Interview.Others;
 using Interview.SOLID;
 using InterviewPrep.DesignPatterns;
 using InterviewPrep.LinqQueries;
@@ -35,4 +36,5 @@ using InterviewPrep.Others;
 //AspecctOrientedProgramming aspecctOrientedProgramming = new AspecctOrientedProgramming();
 //UpAndDownCasting upAndDownCasting = new UpAndDownCasting();
 //Abstractclass abstractclass = new Abstractclass();
-MyDatatable myDatatable = new MyDatatable();
+//MyDatatable myDatatable = new MyDatatable();
+Examples examples = new Examples();
