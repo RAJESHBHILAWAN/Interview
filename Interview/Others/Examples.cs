@@ -30,8 +30,8 @@ namespace Interview.Others
             {
                 printer();
             }
-
         }
+
         private void Findingmissing()
         {
             List<int> x = new List<int>() { 6, 2, 4, 1, 9, 7, 3, 10, 15, 19, 11, 18, 13, 22, 24, 20, 27, 31, 25, 28 };
