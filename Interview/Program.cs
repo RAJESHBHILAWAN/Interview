@@ -37,4 +37,5 @@ using InterviewPrep.Others;
 //UpAndDownCasting upAndDownCasting = new UpAndDownCasting();
 //Abstractclass abstractclass = new Abstractclass();
 //MyDatatable myDatatable = new MyDatatable();
-Examples examples = new Examples();
+//Examples examples = new Examples();
+clsKnowExceptions clsKnowExceptions = new clsKnowExceptions();
