@@ -21,7 +21,7 @@ namespace Interview.Others
             var account2 = new AccountManagement();
             var person2 = new Person(account2) { Name = "Justin Phillip" };
             account2.Winthdraw(person2);
-            Console.ReadLine();
+            Console.ReadLine(); 
 
         }
     }
