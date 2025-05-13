@@ -19,19 +19,19 @@ namespace Interview.Others
             //Upcasting
             Shape shape;
             shape = new Circle(33, 55);
-            shape.Draw();
+           // shape.Draw(); //Circle has x coordinate 33 and y coordinate : 55
             shape = new Triangle(4, 5);
-            shape.Draw();
+            //shape.Draw(); //Triangle has x coordinate 4 and y coordinate : 5
             Circle c = new Circle(2,4);
             Shape ss = (Shape)c;
-            ss.Draw();
-            c.Draw();
+            //ss.Draw(); // Circle has x coordinate 2 and y coordinate : 4
+            // c.Draw();
             //Upcasting
 
             //Downcasting
             Shape s = new Circle(2,4);
             Circle c1 = (Circle)s;
-            c1.Draw();
+            c1.Draw(); //Circle has x coordinate 2 and y coordinate : 4
             //Circle circle = new Circle(2,4);
             //Shape circleAsShape = (Shape)circle;
 

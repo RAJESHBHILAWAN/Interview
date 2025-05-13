@@ -24,7 +24,7 @@ using InterviewPrep.Others;
 //LamdaExpr lamdaExpr = new LamdaExpr();
 // AnonymousMethods anonymousMethods = new AnonymousMethods();
 
-  clsEquals clsEquals = new clsEquals();
+ // clsEquals clsEquals = new clsEquals();
 
 //AsyncAwait await1 = new AsyncAwait();
 //ThirdHighest interview = new ThirdHighest();
@@ -35,7 +35,7 @@ using InterviewPrep.Others;
 //solidPrinciples solidPrinciples = new solidPrinciples();
 //JaggedArrays jaggedArrays = new JaggedArrays();
 //AspecctOrientedProgramming aspecctOrientedProgramming = new AspecctOrientedProgramming();
-//UpAndDownCasting upAndDownCasting = new UpAndDownCasting();
+UpAndDownCasting upAndDownCasting = new UpAndDownCasting();
 //Abstractclass abstractclass = new Abstractclass();
 //MyDatatable myDatatable = new MyDatatable();
 //Examples examples = new Examples();
