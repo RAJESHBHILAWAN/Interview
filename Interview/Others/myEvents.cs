@@ -17,10 +17,10 @@ namespace Interview.Others
         {
             var account1 = new AccountManagement();
             var person = new Person(account1) { Name = "John Doe" };
-            account1.Winthdraw(person);
+            account1.Withdraw(person);
             var account2 = new AccountManagement();
             var person2 = new Person(account2) { Name = "Justin Phillip" };
-            account2.Winthdraw(person2);
+            account2.Withdraw(person2);
             Console.ReadLine(); 
 
         }
@@ -47,7 +47,7 @@ namespace Interview.Others
             Console.WriteLine(eventArgs + ": Money has been deducted from your account\n");
         }
 
-        public void Winthdraw(Person person)
+        public void Withdraw(Person person)
         {
             Console.WriteLine(person.Name + ": You withdraw money");
             DepositEvent(this, person.Name);
