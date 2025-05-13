@@ -24,7 +24,7 @@ using InterviewPrep.Others;
 //LamdaExpr lamdaExpr = new LamdaExpr();
 // AnonymousMethods anonymousMethods = new AnonymousMethods();
 
-// clsEquals clsEquals = new clsEquals();
+  clsEquals clsEquals = new clsEquals();
 
 //AsyncAwait await1 = new AsyncAwait();
 //ThirdHighest interview = new ThirdHighest();
@@ -40,4 +40,4 @@ using InterviewPrep.Others;
 //MyDatatable myDatatable = new MyDatatable();
 //Examples examples = new Examples();
 //clsKnowExceptions clsKnowExceptions = new clsKnowExceptions();
-clsEvent clsEvent = new clsEvent();
+//clsEvent clsEvent = new clsEvent();
