@@ -33,14 +33,14 @@ namespace Interview.Others
         public Person(AccountManagement account)
         {
             _account = account;
-            account.Deposithandler += account.DeductMoney; //Subscribe to Deduct Money Event
+            account.DepositEvent += account.DeductMoney; //Subscribe to Deduct Money Event
         }
     }
 
     public class AccountManagement
     {
         public delegate void DepositHandler(object sender, string eventArgs);
-        public event DepositHandler Deposithandler;
+        public event DepositHandler DepositEvent;
 
         public void DeductMoney(object sender, string eventArgs)
         {
@@ -50,7 +50,7 @@ namespace Interview.Others
         public void Winthdraw(Person person)
         {
             Console.WriteLine(person.Name + ": You withdraw money");
-            Deposithandler(this, person.Name);
+            DepositEvent(this, person.Name);
         }
     }
 

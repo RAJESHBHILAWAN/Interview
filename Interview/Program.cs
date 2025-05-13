@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using Demo;
 using Interview.NotImp;
 using Interview.Others;
 using Interview.SOLID;
@@ -35,7 +36,8 @@ using InterviewPrep.Others;
 //JaggedArrays jaggedArrays = new JaggedArrays();
 //AspecctOrientedProgramming aspecctOrientedProgramming = new AspecctOrientedProgramming();
 //UpAndDownCasting upAndDownCasting = new UpAndDownCasting();
-Abstractclass abstractclass = new Abstractclass();
+//Abstractclass abstractclass = new Abstractclass();
 //MyDatatable myDatatable = new MyDatatable();
 //Examples examples = new Examples();
 //clsKnowExceptions clsKnowExceptions = new clsKnowExceptions();
+clsEvent clsEvent = new clsEvent();
