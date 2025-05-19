@@ -9,15 +9,15 @@ namespace Interview.EntityFramework
 {
     internal class EntityDB : DbContext
     {
-
-        public DbSet<Course> Courses { get; set; }
-        public DbSet<Student> Students { get; set; }
-
         public EntityDB() : base("name=WebApiDbEntities")
         {
 
 
         }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<Student> Students { get; set; }
+
+      
 
     }
 }

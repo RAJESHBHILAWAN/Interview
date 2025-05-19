@@ -39,7 +39,7 @@ namespace Demo
     public class AccountMgt
     {
         public delegate void WithdrawHandler(object sender, string EventArgs);
-        public event WithdrawHandler WithrawlEvent;
+        public event WithdrawHandler? WithrawlEvent;
 
         public void Withraw(object sender, string EventArgs)
         {
