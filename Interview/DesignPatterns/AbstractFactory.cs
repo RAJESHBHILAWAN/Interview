@@ -30,11 +30,7 @@ namespace InterviewPrep.DesignPatterns
         public string GetName();
     }
 
-    public interface IPhoneFactory
-    {
-        public IDumb DumbPhone();
-        public ISmart SmartPhone();
-    }
+  
 
     public class Nokia : ISmart
     {
@@ -69,7 +65,11 @@ namespace InterviewPrep.DesignPatterns
         }
     }
 
-
+    public interface IPhoneFactory
+    {
+        public IDumb DumbPhone();
+        public ISmart SmartPhone();
+    }
 
     public class SamsungFactory : IPhoneFactory
     {
