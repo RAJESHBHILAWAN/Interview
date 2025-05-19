@@ -8,12 +8,12 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace InterviewPrep.DesignPatterns
 {
-    public class SingletonInstance 
+    public class SingletonInstance
     {
         public SingletonInstance()
         {
 
-            Parallel.Invoke(() => WriteInstanceEmployee(),()=> WriteInstanceManager());
+            Parallel.Invoke(() => WriteInstanceEmployee(), () => WriteInstanceManager());
 
         }
 
@@ -37,15 +37,17 @@ namespace InterviewPrep.DesignPatterns
     public class Singleton
     {
         private static int instanceCounter = 0;
-        private static Singleton? instance  ;
-        
+        private static Singleton? instance;
+
         private static readonly object instanceLock = new object();
-        private Singleton() {
+        private Singleton()
+        {
             instanceCounter++;
             Console.WriteLine($"No of instances created are : {instanceCounter}");
         }
-        public static Singleton GetInstance() {
-            
+        public static Singleton GetInstance()
+        {
+
 
             //This is called Double checked locking mechanism, 
             //first, we will check whether the instance is created or not.
@@ -65,13 +67,14 @@ namespace InterviewPrep.DesignPatterns
                 }
             }
             return instance;
-            }
-
-        public void WriteMessage(string message) { 
-            Console.WriteLine($"Message from singleton: {message} at instance: { instanceCounter }" );
         }
-    
-    
-    
+
+        public void WriteMessage(string message)
+        {
+            Console.WriteLine($"Message from singleton: {message} at instance: {instanceCounter}");
+        }
+
+
+
     }
 }
