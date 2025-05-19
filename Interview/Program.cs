@@ -22,7 +22,7 @@ using InterviewPrep.Others;
 //DelegateMethods delegateMethods = new DelegateMethods();
 //InterviewPrep.Others.YeildMethods yeildMethods = new YeildMethods();
 //LamdaExpr lamdaExpr = new LamdaExpr();
-// AnonymousMethods anonymousMethods = new AnonymousMethods();
+  AnonymousMethods anonymousMethods = new AnonymousMethods();
 
  // clsEquals clsEquals = new clsEquals();
 
@@ -35,7 +35,7 @@ using InterviewPrep.Others;
 //solidPrinciples solidPrinciples = new solidPrinciples();
 //JaggedArrays jaggedArrays = new JaggedArrays();
 //AspecctOrientedProgramming aspecctOrientedProgramming = new AspecctOrientedProgramming();
-UpAndDownCasting upAndDownCasting = new UpAndDownCasting();
+//UpAndDownCasting upAndDownCasting = new UpAndDownCasting();
 //Abstractclass abstractclass = new Abstractclass();
 //MyDatatable myDatatable = new MyDatatable();
 //Examples examples = new Examples();

@@ -16,12 +16,13 @@ namespace InterviewPrep.Others
             //AnonFunc();
             //AnonAction();
             //AnonSelect();
-            //MyPredicate1();
+             MyPredicate1();
             //MyEvent();
-            MyClosure();
+           // MyClosure();
         }
 
         delegate void CalculateResult(int x);
+        delegate void CalculateResult1();
 
         private void AnonymousMethod()
         {
@@ -29,8 +30,10 @@ namespace InterviewPrep.Others
             CalculateResult calculateResult = delegate (int x) { Console.WriteLine(x); };
             x = 1;
             calculateResult(x);
-
+            CalculateResult1 calculateResult1 = delegate { Console.WriteLine(x); };
+            calculateResult1();
         }
+
         private void MyClosure()
         {
             int x = 0;
@@ -76,7 +79,7 @@ namespace InterviewPrep.Others
         private void MyPredicate1()
         {
             int number = 4;
-            Predicate<int> isEven = (int a) => number % 2 == 0;
+            Predicate<int> isEven = (a) => number % 2 == 0;
             Console.WriteLine($"Is {number} even: {isEven(number)}" );
 
         }
