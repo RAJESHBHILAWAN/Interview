@@ -21,10 +21,10 @@ namespace Interview.Others
             //FizzBuzz();
             //ReverseString();
             //FFNR();
-            //AnagramChecker();
+             AnagramChecker();
             //RemoveDuplicate();
             //CWO();
-            FrequentlyUsedWord();
+           // FrequentlyUsedWord();
         }
 
         public async void GetUserName(string userId )
@@ -112,16 +112,17 @@ namespace Interview.Others
         }
         private void AnagramChecker()
         {
-            string str = "bab";
-            string res = Reverse(str);
-            if (str == res)
-            {
-                Console.WriteLine($"For strin {str} its reverse is {res} is a Anagram");
+            string str = "silent";
+            string str1 = "listen";
+            if (String.Concat(str.OrderBy(c => c)).Equals(String.Concat(str1.OrderBy(c => c)))) {
+                Console.WriteLine($"For string {str} and {str1} is a Anagram");
+
             }
-            else
-            {
-                Console.WriteLine($"For strin {str} its reverse is {res} is not a Anagram");
+            else {
+                Console.WriteLine($"For string {str} and {str1} is not a Anagram");
+
             }
+          
             
         }
 
