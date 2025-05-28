@@ -22,7 +22,7 @@ using InterviewPrep.Others;
 //DelegateMethods delegateMethods = new DelegateMethods();
 //InterviewPrep.Others.YeildMethods yeildMethods = new YeildMethods();
 //LamdaExpr lamdaExpr = new LamdaExpr();
-  AnonymousMethods anonymousMethods = new AnonymousMethods();
+ // AnonymousMethods anonymousMethods = new AnonymousMethods();
 
  // clsEquals clsEquals = new clsEquals();
 
@@ -38,6 +38,6 @@ using InterviewPrep.Others;
 //UpAndDownCasting upAndDownCasting = new UpAndDownCasting();
 //Abstractclass abstractclass = new Abstractclass();
 //MyDatatable myDatatable = new MyDatatable();
-//Examples examples = new Examples();
+Examples examples = new Examples();
 //clsKnowExceptions clsKnowExceptions = new clsKnowExceptions();
 //clsEvent clsEvent = new clsEvent();

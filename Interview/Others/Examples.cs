@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Interview.Others
@@ -14,8 +15,187 @@ namespace Interview.Others
             //HowManyTimesNumberOccur();
             //HowManyTimesNumberOccurDictionary();
             //Testforcharacters();
-            mydel();
+            //    mydel();
+
+            //  IsPalindrone();
+            //FizzBuzz();
+            //ReverseString();
+            //FFNR();
+            //AnagramChecker();
+            //RemoveDuplicate();
+            //CWO();
+            FrequentlyUsedWord();
         }
+
+        public async void GetUserName(string userId )
+        {
+            string xx =  await RunAsync(userId);
+            Task.Delay(1000); // Simulate DB call
+             // $"User_{userId.ToString()}";
+        }
+        private Task<string> RunAsync(string message)
+        {
+            return Task.Run<string>(() => LongRunningThread(message));
+
+        }
+        private string LongRunningThread(string message)
+        {
+            Thread.Sleep(1000);
+            return "Hello: " + message;
+        }
+        private int MyTask()
+        {
+            return 0;
+        }
+        private void FrequentlyUsedWord()
+        {
+            string para = "Hello world This is a great world, This World is simply great".ToLower().Replace(".","").Replace(",","");
+            string[] mystr = para.Split(' ');
+            var res = from v in mystr
+                      group v by v into
+                      g
+                      orderby g.Key descending
+                      
+                      select new
+                      {
+                          Name = g.Key,
+                          Count = g.Count(),
+                      };
+            int x = 1;
+            string selnm = "";
+            int cnt = 0;
+            foreach (var v in res) { 
+                if(v.Count > x)
+                {
+                    selnm= v.Name;
+                    cnt = v.Count;
+                    x= v.Count;
+                }
+             }
+            Console.WriteLine($"The word {selnm} occured most number of time by {cnt} ");
+
+        }
+        private void CWO()
+        {
+            string para = "Ram and Shyam, went to mela but Ram did not eat anything";
+            string word = "Ram";
+            int res = CountWordOccurrences(para, word);
+            Console.WriteLine($"In para { para } the word {word} occured {res} times");
+        }
+        public static int CountWordOccurrences(string paragraph, string word)
+        {
+            // Remove punctuation and convert both the paragraph and the word to lowercase
+           // paragraph = Regex.Replace(paragraph, @"\p{P}", " ").ToLower();
+            paragraph = paragraph.ToLower();
+            word = word.ToLower();
+
+            // Split the paragraph into words
+            string[] words = paragraph.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            // Count the occurrences of the word
+            int count = 0;
+            foreach (string currentWord in words)
+            {
+                if (currentWord == word)
+                {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+        private void RemoveDuplicate()
+        {
+            int[] s = { 1, 2, 3, 3, 4 };
+            int[] q = s.Distinct().ToArray();
+            Console.WriteLine(String.Join(", ", q));
+        }
+        private void AnagramChecker()
+        {
+            string str = "bab";
+            string res = Reverse(str);
+            if (str == res)
+            {
+                Console.WriteLine($"For strin {str} its reverse is {res} is a Anagram");
+            }
+            else
+            {
+                Console.WriteLine($"For strin {str} its reverse is {res} is not a Anagram");
+            }
+            
+        }
+
+
+        private void FFNR()
+        {
+            string testString1 = "abccdea";
+            char firstNonRepeat1 = FindFirstNonRepeated(testString1);
+            Console.WriteLine("First non-repeated character in '" + testString1 + "': " + firstNonRepeat1); // Output: a
+
+        }
+        public static char FindFirstNonRepeated(string input)
+        {
+            Dictionary<char, int> charCounts = new Dictionary<char, int>();
+
+            // Count character frequencies
+            foreach (char c in input)
+            {
+                if (charCounts.ContainsKey(c))
+                {
+                    charCounts[c]++;
+                }
+                else
+                {
+                    charCounts[c] = 1;
+                }
+            }
+
+            // Find the first non-repeated character
+            foreach (char c in input)
+            {
+                if (charCounts[c] == 1)
+                {
+                    return c;
+                }
+            }
+
+            // If no non-repeated character found, return null or a default character
+            return '\0'; // Return null character if no non-repeating character is found
+        }
+
+
+        private void ReverseString()
+        {
+            string str = "ameoba";
+            string res = Reverse(str);
+            Console.WriteLine($"For strin { str } its reverse is {res}");
+        }
+
+
+        public string Reverse(string s)
+        {
+            char[] charArray = s.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+        }
+        private void FizzBuzz()
+        {
+            int n = 100;
+            List<string> res = GfG.fizzBuzz(n);
+            foreach (string s in res)
+                Console.Write(s + " ");
+        }
+        private void IsPalindrone()
+        {
+            bool res = false;
+            string content = "racecar";
+            res = content.SequenceEqual(content.Reverse());
+            Console.WriteLine($"String { content } is palindrone. Statement is {res}  ");
+
+
+        }
+
+
         delegate void Printer();
 
         private void mydel()
@@ -138,4 +318,50 @@ namespace Interview.Others
         }
     }
 
+}
+
+
+static class GfG
+{
+    public static List<string> fizzBuzz(int n)
+    {
+        List<string> res = new List<string>();
+
+        // Loop from 1 to n (inclusive)
+        for (int i = 1; i <= n; ++i)
+        {
+
+            // Check if i is divisible by both 3 and 5
+            if (i % 3 == 0 && i % 5 == 0)
+            {
+
+                // Add "FizzBuzz" to the result list
+                res.Add("FizzBuzz");
+            }
+
+            // Check if i is divisible by 3
+            else if (i % 3 == 0)
+            {
+
+                // Add "Fizz" to the result list
+                res.Add("Fizz");
+            }
+
+            // Check if i is divisible by 5
+            else if (i % 5 == 0)
+            {
+
+                // Add "Buzz" to the result list
+                res.Add("Buzz");
+            }
+            else
+            {
+
+                // Add the current number as a string to the
+                // result list
+                res.Add(i.ToString());
+            }
+        }
+        return res;
+    }
 }
