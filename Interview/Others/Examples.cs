@@ -20,11 +20,11 @@ namespace Interview.Others
             //  IsPalindrone();
             //FizzBuzz();
             //ReverseString();
-            //FFNR();
-             AnagramChecker();
+            //FindFirstNonRepeated1();
+            AnagramChecker();
             //RemoveDuplicate();
-            //CWO();
-           // FrequentlyUsedWord();
+            //CountWordOccurrences1();
+            // FrequentlyUsedWord();
         }
 
         public async void GetUserName(string userId )
@@ -75,7 +75,7 @@ namespace Interview.Others
             Console.WriteLine($"The word {selnm} occured most number of time by {cnt} ");
 
         }
-        private void CWO()
+        private void CountWordOccurrences1()
         {
             string para = "Ram and Shyam, went to mela but Ram did not eat anything";
             string word = "Ram";
@@ -127,7 +127,7 @@ namespace Interview.Others
         }
 
 
-        private void FFNR()
+        private void FindFirstNonRepeated1()
         {
             string testString1 = "abccdea";
             char firstNonRepeat1 = FindFirstNonRepeated(testString1);
