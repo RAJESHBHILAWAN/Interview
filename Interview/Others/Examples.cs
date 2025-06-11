@@ -21,12 +21,53 @@ namespace Interview.Others
             //FizzBuzz();
             //ReverseString();
             //FindFirstNonRepeated1();
-            AnagramChecker();
+            // AnagramChecker();
             //RemoveDuplicate();
             //CountWordOccurrences1();
             // FrequentlyUsedWord();
+            EqualTo13();
+        }
+      private void EqualTo13()
+        {
+            int[] nums = { 2, 7, 11, 15, 9, 4 };
+            int target = 13;
+            int[] result = TwoSum(nums, target);
+
+            if (result != null)
+            {
+                Console.WriteLine($"Indices: {result[0]}, {result[1]}");
+                Console.WriteLine($"Values: {nums[result[0]]}, {nums[result[1]]}");
+            }
+            else
+            {
+                Console.WriteLine("No two numbers found");
+            }
+
         }
 
+        public static int[] TwoSum(int[] nums, int target)
+        {
+            // Create a dictionary to store the values and their indices.
+            Dictionary<int, int> numMap = new Dictionary<int, int>();
+
+            // Iterate through the array and check if the complement of the current value exists in the dictionary.
+            for (int i = 0; i < nums.Length; i++)
+            {
+                int complement = target - nums[i];
+
+                // If the complement exists, return the indices of the current value and the complement.
+                if (numMap.ContainsKey(complement))
+                {
+                    return new int[] { numMap[complement], i };
+                }
+
+                // Otherwise, add the current value and its index to the dictionary.
+                numMap[nums[i]] = i;
+            }
+
+            // If no two numbers are found, return null.
+            return null;
+        }
         public async void GetUserName(string userId )
         {
             string xx =  await RunAsync(userId);
