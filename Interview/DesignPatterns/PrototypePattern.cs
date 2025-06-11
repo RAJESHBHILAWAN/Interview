@@ -34,8 +34,9 @@ namespace Interview.DesignPatterns
         public string Model { get; set; }
         public int Year { get; set; }
         public List<string> Options { get; set; }
-     public Car(string make, string model, int year, List<string> options) {
-        this.Make = make;
+        public Car(string make, string model, int year, List<string> options)
+        {
+            this.Make = make;
             this.Model = model;
             this.Year = year;
             this.Options = options;
@@ -44,11 +45,11 @@ namespace Interview.DesignPatterns
 
         public override Prototype Clone()
         {
-             return new Car(Make, Model, Year, new List<string>(Options));
+            return new Car(Make, Model, Year, new List<string>(Options));
         }
     }
     public abstract class Prototype
-    { 
+    {
         public abstract Prototype Clone();
     }
 
